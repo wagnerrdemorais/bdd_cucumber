@@ -47,5 +47,6 @@ public class LoginSteps {
     @Then("continua na pagina de login")
     public void continua_na_pagina_de_login() {
         Assert.assertTrue(this.loginPage.estaNaPaginaDeLoginComErro());
+        this.browser.clean();
     }
 }

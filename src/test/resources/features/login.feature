@@ -1,3 +1,5 @@
+
+@leilao
 Feature: Apenas usuarios cadastrados podem se logar
 
   Scenario: Um usuario valido consegue se logar
