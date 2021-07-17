@@ -48,6 +48,16 @@ public class LeiloesPage {
 		return new AlterarLeilaoPage(driver);
 	}
 
+	public boolean estaNaPaginaDeLeiloes() {
+		esperaCarregarPaginaDeLeiloes();
+		return this.driver.getCurrentUrl().endsWith("/leiloes");
+	}
+
+	public void esperaCarregarPaginaDeLeiloes() {
+		WebDriverWait wait = new WebDriverWait(driver,2);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(text(),'Todos leilões')]")));
+	}
+
 	public DetalhesDoLeilaoPage visitaPaginaDoLeilaoDo(String donoDoLeilao) throws Exception {
 		WebDriverWait wait = new WebDriverWait(driver,5);
 		
